@@ -15,6 +15,10 @@ async function db(URI) {
 
 db(DB_URI).catch(err => console.log(err));
 
+app.set('view engine', 'ejs');
+
+app.use(require('./routes'));
+
 app.listen(PORT, err => {
     if (err) return console.error(err);
     console.log(`Server started listening at port ${PORT}`);
