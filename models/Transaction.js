@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const TransferModel = new mongoose.Schema({
+const TransactionModel = new mongoose.Schema({
     from: {
         type: String,
         required: true
@@ -15,4 +15,4 @@ const TransferModel = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Transfer', TransferModel);
+module.exports = mongoose.model('Transaction', TransactionModel);

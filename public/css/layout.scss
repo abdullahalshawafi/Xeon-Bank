@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Display&display=swap");
+@import "colors";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans Display", sans-serif;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: $primary-font-color;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: $background-color;
+    
+    h1 {
+        margin-left: 2rem;
+    }
+    
+    nav {
+        position: absolute;
+        z-index: -1;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-200%);
+        transition: transform 0.6s ease-in-out;
+        
+        ul {
+            background-color: $background-color;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0;
+            height: fit-content;
+
+            li a {
+                margin-bottom: 1.25rem;
+                display: inline-block;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -0.5rem;
+                    left: 0;
+                    width: 0;
+                    border-top: 3px solid $primary-font-color;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            li a:hover::before {
+                width: 100%;
+            }
+        }
+    }
+
+    button {
+        font-size: 2rem;
+        color: $primary-font-color;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+footer {
+    background-color: $background-color;
+    padding: 0 5rem 2rem 5rem;
+
+    hr {
+        border: 1.5px solid $primary-font-color;
+        margin: auto;
+        width: 70%;
+    }
+
+    p {
+        color: $primary-font-color;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    header {
+        nav {
+            all: unset;
+
+            ul {
+                flex-direction: row;
+                width: 25rem;
+
+                li a {
+                    margin: 0;
+                }
+            }
+        }
+
+        button {
+            display: none;
+        }
+    }
+}

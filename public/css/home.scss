@@ -1,0 +1,285 @@
+@import "colors";
+
+.landing-page {
+    background-color: $section-color;
+    background-image: url("/images/background.jpg");
+    background-size: cover;
+    background-position: left center;
+    background-blend-mode: darken;
+    display: flex;
+    align-items: center;
+    height: 100vmin;
+
+    h1 {
+        color: $primary-font-color;
+        font-size: 9vw;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        animation: fadeRight 2s ease-in-out forwards;
+
+        span {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.services {
+    background-color: $primary-font-color;
+    padding: 2rem;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: 1fr repeat(2, minmax(20vw, 40vw)) 1fr;
+    grid-template-areas:
+        ". title title ."
+        ". customers customers ."
+        ". transactions transactions .";
+
+    h1 {
+        grid-area: title;
+        text-align: center;
+        font-size: 4rem;
+    }
+
+    .service {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        .img-container {
+            opacity: 0;
+            width: 50%;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
+        .service-details {
+            text-align: center;
+            opacity: 0;
+            width: 80%;
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            button {
+                border: none;
+
+                a {
+                    display: block;
+                    border: 2px solid $background-color;
+                    padding: 0.8rem 1rem;
+                    color: $background-color;
+                    background-color: $primary-font-color;
+                    position: relative;
+                    z-index: 1;
+                    transition: color 0.3s ease-in-out;
+
+                    i {
+                        margin-left: 0.5rem;
+                    }
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 100%;
+                        background-color: $background-color;
+                        z-index: -1;
+                        transition: width 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        color: $primary-font-color;
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .customers {
+        grid-area: customers;
+    }
+
+    .transactions {
+        grid-area: transactions;
+        flex-direction: column-reverse;
+    }
+}
+
+.contact-us {
+    background-color: $background-color;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    h3 {
+        color: $primary-font-color;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        input,
+        textarea,
+        button {
+            background-color: $primary-font-color;
+            border: none;
+            border-radius: 0;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            cursor: pointer;
+            border: 2px solid $primary-font-color;
+            color: $primary-font-color;
+            background-color: $background-color;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease-in-out;
+
+            i {
+                margin-left: 0.5rem;
+            }
+
+            &:hover {
+                color: $background-color;
+                background-color: $primary-font-color;
+            }
+        }
+    }
+
+    .contact-information {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &>div>div {
+            margin-bottom: 1rem;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.5rem;
+
+            .bi {
+                transition: color 0.3s ease-in-out;
+            }
+
+            @each $name, $color in $social-links {
+                .bi-#{$name}:hover {
+                    color: $color;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .landing-page {
+        h1 {
+            margin-left: 5rem;
+            text-align: left;
+            width: 50%;
+        }
+    }
+
+    .services {
+        padding: 5rem 7rem;
+
+        .service {
+            flex-direction: row;
+
+            .img-container {
+                width: 35%;
+            }
+
+            .service-details {
+                text-align: left;
+                width: 55%;
+            }
+        }
+    }
+
+    .contact-us {
+        padding: 5rem 7rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        form {
+            width: 50%;
+        }
+
+        .contact-information {
+            width: 30%;
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .landing-page {
+        h1 {
+            font-size: 6vw;
+        }
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
