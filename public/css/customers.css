@@ -1,6 +1,6 @@
 .customers {
   background-color: #0f0f0f;
-  padding: 5rem 7rem;
+  padding: 4rem;
 }
 
 .customers h1 {
@@ -8,30 +8,162 @@
   margin-bottom: 1.5rem;
 }
 
-.customers table {
+.customers .responsive-table {
+  overflow-x: auto;
+}
+
+.customers .responsive-table table {
   border-collapse: collapse;
-  background-color: #f0f0f0;
   width: 100%;
   text-align: left;
 }
 
-.customers table th, .customers table td {
-  padding: 0.8rem 1rem;
-}
-
-.customers table tbody tr:nth-child(even) {
+.customers .responsive-table table thead tr {
   background-color: #f0f0f0;
 }
 
-.customers table tbody tr:nth-child(odd) {
+.customers .responsive-table table tr {
+  opacity: 0;
+}
+
+.customers .responsive-table table th,
+.customers .responsive-table table td {
+  padding: 0.8rem 1rem;
+}
+
+.customers .responsive-table table tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.customers .responsive-table table tbody tr:nth-child(odd) {
   background-color: #cecece;
 }
 
-.customers table a {
+.customers .responsive-table table tbody a {
   color: #2e88dd;
 }
 
-.customers table tfoot tr {
+.customers .responsive-table table tfoot tr {
   background-color: #cecece;
+}
+
+.customer-details {
+  padding: 4rem;
+  padding-top: 7rem;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  justify-items: center;
+  -ms-grid-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+      grid-template-columns: minmax(20vw, 30vw) 1fr minmax(20vw, 30vw);
+  grid-row-gap: 2rem;
+}
+
+.customer-details .col-1 {
+  grid-column: 1 / -1;
+}
+
+.customer-details .col-2 {
+  grid-column: 1 / -1;
+}
+
+.customer-details .bi {
+  margin-right: 0.5rem;
+}
+
+.customer-details .btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid #f0f0f0;
+  padding: 0.8rem 1rem;
+  color: #f0f0f0;
+  background-color: #0f0f0f;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.customer-details .btn .bi {
+  margin-left: 0.5rem;
+}
+
+.customer-details .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #f0f0f0;
+  z-index: -1;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+.customer-details .btn:hover {
+  color: #0f0f0f;
+}
+
+.customer-details .btn:hover::before {
+  width: 100%;
+}
+
+@media screen and (min-width: 850px) {
+  .customer-details {
+    padding: 5rem 7rem;
+    justify-items: left;
+        grid-template-areas: "name . account-number" "email . balance" "birthdate . nationality";
+  }
+  .customer-details .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+  }
+  .customer-details .email {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: email;
+  }
+  .customer-details .birthdate {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: birthdate;
+  }
+  .customer-details .account-number {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: account-number;
+  }
+  .customer-details .balance {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: balance;
+  }
+  .customer-details .nationality {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: nationality;
+  }
+  .customer-details .col-1 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .customer-details .col-2 {
+    grid-column: 3 / -1;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .customers {
+    padding: 5rem 7rem;
+  }
 }
 /*# sourceMappingURL=customers.css.map */

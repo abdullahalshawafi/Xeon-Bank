@@ -18,6 +18,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const customer = await Customer.findById(id)
+        res.render('pages/customer-details', {
+            title: `Xeon Bank | ${customer.name}`,
+            files: 'customers',
+            customer
+        });
+    } catch (err) {
+        res.send(err);
+        console.log(err);
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const customer = await new Customer(req.body);

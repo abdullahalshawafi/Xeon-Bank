@@ -1,0 +1,14 @@
+<%- include('../layouts/header') %>
+
+<div class="customer-details">
+    <h1 class="col-1 name"><%= customer.name %></h1>
+    <h3 class="col-1 email"><a href="mailto:<%= customer.email %>"><i class="bi bi-envelope"></i> <%= customer.email %></a></h3>
+    <p class="col-1 birthdate"><i class="bi bi-calendar-event"></i> <%= customer.birthdate %></p>
+    <p class="col-2 account-number"><b>Account No.</b>: <%= customer.account %></p>
+    <p class="col-2 balance"><b>Balance</b>: <%= customer.balance %>$</p>
+    <p class="col-2 nationality"><b>Nationality</b>: <%= customer.nationality %></p>
+    <a class="col-1 btn" href="/transactions/transfer?to=<%= customer.account %>">Transfert Money <i class="bi bi-arrow-right-circle"></i></a>
+    <a class="col-2 btn" href="/transactions/history/<%= customer._id %>">See transactions history <i class="bi bi-clock-history"></i></a>
+</div>
+
+<%- include('../layouts/footer') %>
