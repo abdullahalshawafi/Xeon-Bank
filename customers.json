@@ -1,0 +1,82 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john.doe@gmail.com",
+        "account": 32228780215665,
+        "birthdate": "1985-12-12",
+        "nationality": "German",
+        "balance": 2000
+    },
+    {
+        "name": "Robert Owis",
+        "email": "robert.owis23@gmail.com",
+        "account": 49821293332923,
+        "birthdate": "1995-2-12",
+        "nationality": "Spanish",
+        "balance": 500000
+    },
+    {
+        "name": "Mohamed Ali",
+        "email": "mohamed.ali232@gmail.com",
+        "account": 39832123812832,
+        "birthdate": "1987-5-23",
+        "nationality": "Egyptian",
+        "balance": 3223300
+    },
+    {
+        "name": "Michael Nawar",
+        "email": "michaelnawar.as@gmail.com",
+        "account": 32380001233855,
+        "birthdate": "2000-5-1",
+        "nationality": "French",
+        "balance": 433920
+    },
+    {
+        "name": "Sally Jerard",
+        "email": "sally.soly@gmail.com",
+        "account": 54989922394000,
+        "birthdate": "1999-4-12",
+        "nationality": "Italian",
+        "balance": 300
+    },
+    {
+        "name": "Jessica Peter",
+        "email": "jessica.peter@gmail.com",
+        "account": 77388829401233,
+        "birthdate": "2001-4-1",
+        "nationality": "Brazilian",
+        "balance": 800000
+    },
+    {
+        "name": "Wilson Albert",
+        "email": "wilson.albert544@gmail.com",
+        "account": 93847202847120,
+        "birthdate": "1990-11-12",
+        "nationality": "American",
+        "balance": 6784500
+    },
+    {
+        "name": "Eren Yeager",
+        "email": "eren.yeager850@gmail.com",
+        "account": 85050366083522,
+        "birthdate": "1980-3-29",
+        "nationality": "Japanese",
+        "balance": 200000
+    },
+    {
+        "name": "Mikasa Ackerman",
+        "email": "mikasa.ackerman@gmail.com",
+        "account": 23479280983423,
+        "birthdate": "1981-9-12",
+        "nationality": "Japanese",
+        "balance": 4000
+    },
+    {
+        "name": "Armen Arlert",
+        "email": "armen.arlert933@gmail.com",
+        "account": 23984098832229,
+        "birthdate": "1988-1-11",
+        "nationality": "Japanese",
+        "balance": 989390
+    }
+]

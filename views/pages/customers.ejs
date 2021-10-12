@@ -1,0 +1,37 @@
+<%- include('../layouts/header') %>
+
+<div class="customers">
+    <h1>Customers</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Account Number</th>
+                <th>Balance</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% customers.forEach(customer => { %>
+            <tr>
+                <td><%= customer.name %></td>
+                <td><%= customer.email %></td>
+                <td><%= customer.account %></td>
+                <td><%= customer.balance %>$</td>
+                <td><a href="/customer/<%= customer._id %>">Open</a></td>
+            </tr>
+            <% }); %>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Total customers count</th>
+                <td><%= customers.length %></td>
+                <th>Total money</th>
+                <td><%= totalBalance %>$</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+<%- include('../layouts/footer') %>

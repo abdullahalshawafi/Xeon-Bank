@@ -1,0 +1,37 @@
+.customers {
+  background-color: #0f0f0f;
+  padding: 5rem 7rem;
+}
+
+.customers h1 {
+  color: #f0f0f0;
+  margin-bottom: 1.5rem;
+}
+
+.customers table {
+  border-collapse: collapse;
+  background-color: #f0f0f0;
+  width: 100%;
+  text-align: left;
+}
+
+.customers table th, .customers table td {
+  padding: 0.8rem 1rem;
+}
+
+.customers table tbody tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+.customers table tbody tr:nth-child(odd) {
+  background-color: #cecece;
+}
+
+.customers table a {
+  color: #2e88dd;
+}
+
+.customers table tfoot tr {
+  background-color: #cecece;
+}
+/*# sourceMappingURL=customers.css.map */

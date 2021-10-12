@@ -16,10 +16,13 @@ async function db(URI) {
 db(DB_URI).catch(err => console.log(err));
 
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.set('view engine', 'ejs');
 
 app.use(require('./routes'));
+app.use('/customers', require('./routes/customers'));
 
 app.listen(PORT, err => {
     if (err) return console.error(err);

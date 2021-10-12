@@ -10,16 +10,17 @@ const CustomerSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    account: {
+        type: String,
+        required: true,
+        unique: true
+    },
     birthdate: {
         type: String,
         required: true
     },
     nationality: {
         type: String,
-        required: true
-    },
-    nationalId: {
-        type: Number,
         required: true
     },
     balance: {
