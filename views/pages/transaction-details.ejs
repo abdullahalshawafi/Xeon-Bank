@@ -1,0 +1,17 @@
+<%- include('../layouts/header') %>
+
+<div class="transaction-details">
+    <h1 class="col-1 sender">Sender</h1>
+    <h2 class="col-1 sender-name"><a href="/customers/<%= sender._id %>"><%= sender.name %></a></h2>
+    <p class="col-1 sender-account"><b>Account No.</b>: <%= sender.account %></p>
+    <p class="col-1 sent"><b>Sent</b>: <%= transaction.amount %>$</p>
+    <p class="col-1 sender-balance"><b>Balance</b>: <%= sender.balance %>$</p>
+    <h1 class="col-2 reciever">Reciever</h1>
+    <h2 class="col-2 reciever-name"><a href="/customers/<%= reciever._id %>"><%= reciever.name %></a></h2>
+    <p class="col-2 reciever-account"><b>Account No.</b>: <%= reciever.account %></p>
+    <p class="col-2 recieved"><b>Recieved</b>: <%= transaction.amount %>$</p>
+    <p class="col-2 reciever-balance"><b>Balance</b>: <%= reciever.balance %>$</p>
+    <p class="transaction-date"><b>Transaction Date</b>: <%= transaction.createdAt.toLocaleString() %></p>
+</div>
+
+<%- include('../layouts/footer') %>

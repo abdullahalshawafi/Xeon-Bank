@@ -1,4 +1,28 @@
 const services = document.querySelectorAll('section.services .service');
+const contactForm = document.querySelector('.contact-us form');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const { name, email, message } = e.target.children;
+    const body = {
+        name: name.value,
+        email: email.value,
+        message: message.value
+    };
+    try {
+        let res = await fetch(`${e.target.action}contact-us`, {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+        res = await res.text();
+        alert(res);
+    } catch (err) {
+        console.log(err);
+    }
+});
 
 const handleServicesIntersect = entries => {
     entries.forEach(entry => {

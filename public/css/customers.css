@@ -1,49 +1,61 @@
-.customers {
+.customers,
+.transactions-history {
   background-color: #0f0f0f;
   padding: 4rem;
 }
 
-.customers h1 {
+.customers h1,
+.transactions-history h1 {
   color: #f0f0f0;
   margin-bottom: 1.5rem;
 }
 
-.customers .responsive-table {
+.customers .responsive-table,
+.transactions-history .responsive-table {
   overflow-x: auto;
 }
 
-.customers .responsive-table table {
+.customers .responsive-table table,
+.transactions-history .responsive-table table {
   border-collapse: collapse;
   width: 100%;
   text-align: left;
 }
 
-.customers .responsive-table table thead tr {
+.customers .responsive-table table thead tr,
+.transactions-history .responsive-table table thead tr {
   background-color: #f0f0f0;
 }
 
-.customers .responsive-table table tr {
+.customers .responsive-table table tr,
+.transactions-history .responsive-table table tr {
   opacity: 0;
 }
 
 .customers .responsive-table table th,
-.customers .responsive-table table td {
+.customers .responsive-table table td,
+.transactions-history .responsive-table table th,
+.transactions-history .responsive-table table td {
   padding: 0.8rem 1rem;
 }
 
-.customers .responsive-table table tbody tr:nth-child(even) {
+.customers .responsive-table table tbody tr:nth-child(even),
+.transactions-history .responsive-table table tbody tr:nth-child(even) {
   background-color: #f0f0f0;
 }
 
-.customers .responsive-table table tbody tr:nth-child(odd) {
+.customers .responsive-table table tbody tr:nth-child(odd),
+.transactions-history .responsive-table table tbody tr:nth-child(odd) {
   background-color: #cecece;
 }
 
-.customers .responsive-table table tbody a {
+.customers .responsive-table table tbody a,
+.transactions-history .responsive-table table tbody a {
   color: #2e88dd;
 }
 
-.customers .responsive-table table tfoot tr {
+.customers .responsive-table table tfoot tr,
+.transactions-history .responsive-table table tfoot tr {
   background-color: #cecece;
 }
 
@@ -63,11 +75,9 @@
   grid-row-gap: 2rem;
 }
 
-.customer-details .col-1 {
-  grid-column: 1 / -1;
-}
-
-.customer-details .col-2 {
+.customer-details .col-1,
+.customer-details .col-2,
+.customer-details .transfer-btn {
   grid-column: 1 / -1;
 }
 
@@ -75,7 +85,7 @@
   margin-right: 0.5rem;
 }
 
-.customer-details .btn {
+.customer-details .transfer-btn {
   display: inline-block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -90,11 +100,11 @@
   transition: color 0.3s ease-in-out;
 }
 
-.customer-details .btn .bi {
+.customer-details .transfer-btn .bi {
   margin-left: 0.5rem;
 }
 
-.customer-details .btn::before {
+.customer-details .transfer-btn::before {
   content: "";
   position: absolute;
   top: 0;
@@ -107,12 +117,18 @@
   transition: width 0.3s ease-in-out;
 }
 
-.customer-details .btn:hover {
+.customer-details .transfer-btn:hover {
   color: #0f0f0f;
 }
 
-.customer-details .btn:hover::before {
+.customer-details .transfer-btn:hover::before {
   width: 100%;
+}
+
+.transactions-history {
+  padding: 4rem;
+  padding-top: 0 !important;
+  text-align: center;
 }
 
 @media screen and (min-width: 850px) {
@@ -158,6 +174,14 @@
   }
   .customer-details .col-2 {
     grid-column: 3 / -1;
+  }
+  .customer-details .transfer-btn {
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .transactions-history {
+    padding: 5rem 7rem;
+    text-align: left;
   }
 }
 

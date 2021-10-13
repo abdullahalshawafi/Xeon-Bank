@@ -160,8 +160,7 @@
             border: 2px solid $primary-font-color;
             color: $primary-font-color;
             background-color: $background-color;
-            position: relative;
-            z-index: 1;
+            font-size: 1.1rem;
             transition: all 0.3s ease-in-out;
 
             i {

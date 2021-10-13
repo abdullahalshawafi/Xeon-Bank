@@ -21,10 +21,11 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const customer = await Customer.findById(id)
+        const customer = await Customer.findById(id).populate('transactions');
         res.render('pages/customer-details', {
             title: `Xeon Bank | ${customer.name}`,
             files: 'customers',
+            transactions: customer.transactions,
             customer
         });
     } catch (err) {

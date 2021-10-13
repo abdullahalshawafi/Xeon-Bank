@@ -23,6 +23,7 @@ app.set('view engine', 'ejs');
 
 app.use(require('./routes'));
 app.use('/customers', require('./routes/customers'));
+app.use('/transactions', require('./routes/transactions'));
 
 app.listen(PORT, err => {
     if (err) return console.error(err);

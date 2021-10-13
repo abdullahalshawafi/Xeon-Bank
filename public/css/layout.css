@@ -9,6 +9,22 @@
   font-family: "Noto Sans Display", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 a,
 a:hover {
   text-decoration: none;
@@ -115,9 +131,11 @@ footer {
 }
 
 footer hr {
-  border: 1.5px solid #f0f0f0;
-  margin: auto;
+  border-width: 0;
+  height: 1.5px;
   width: 70%;
+  background-color: #f0f0f0;
+  margin: auto;
 }
 
 footer p {

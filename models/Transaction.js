@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 
 const TransactionModel = new mongoose.Schema({
     from: {
-        type: String,
+        type: Number,
         required: true
     },
-    from: {
-        type: String,
+    to: {
+        type: Number,
         required: true
     },
     amount: {

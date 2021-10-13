@@ -10,6 +10,22 @@
     font-family: "Noto Sans Display", sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 a,
 a:hover {
     text-decoration: none;
@@ -32,11 +48,11 @@ header {
     align-items: center;
     padding: 0.75rem 1rem;
     background-color: $background-color;
-    
+
     h1 {
         margin-left: 2rem;
     }
-    
+
     nav {
         position: absolute;
         z-index: -1;
@@ -45,7 +61,7 @@ header {
         width: 100%;
         transform: translateY(-200%);
         transition: transform 0.6s ease-in-out;
-        
+
         ul {
             background-color: $background-color;
             list-style: none;
@@ -93,9 +109,11 @@ footer {
     padding: 0 5rem 2rem 5rem;
 
     hr {
-        border: 1.5px solid $primary-font-color;
-        margin: auto;
+        border-width: 0;
+        height: 1.5px;
         width: 70%;
+        background-color: $primary-font-color;
+        margin: auto;
     }
 
     p {

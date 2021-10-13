@@ -11,7 +11,7 @@ const CustomerSchema = new mongoose.Schema({
         unique: true
     },
     account: {
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
@@ -26,7 +26,11 @@ const CustomerSchema = new mongoose.Schema({
     balance: {
         type: Number,
         default: 0.00
-    }
+    },
+    transactions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Transaction"
+    }]
 }, { timestamps: true });
 
 module.exports = mongoose.model('Customer', CustomerSchema);
