@@ -22,6 +22,7 @@ app.use(express.json());
 app.set('view engine', 'ejs');
 
 app.use(require('./routes'));
+app.use('/messages', require('./routes/messages'));
 app.use('/customers', require('./routes/customers'));
 app.use('/transactions', require('./routes/transactions'));
 

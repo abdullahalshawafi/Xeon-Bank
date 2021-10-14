@@ -104,11 +104,13 @@
                         transition: width 0.3s ease-in-out;
                     }
 
-                    &:hover {
+                    &:hover,
+                    &:focus {
                         color: $primary-font-color;
                     }
 
-                    &:hover::before {
+                    &:hover::before,
+                    &:focus::before {
                         width: 100%;
                     }
                 }
@@ -167,7 +169,8 @@
                 margin-left: 0.5rem;
             }
 
-            &:hover {
+            &:hover,
+            &:focus {
                 color: $background-color;
                 background-color: $primary-font-color;
             }
@@ -192,7 +195,9 @@
                 transition: color 0.3s ease-in-out;
             }
 
-            @each $name, $color in $social-links {
+            @each $name,
+            $color in $social-links {
+
                 .bi-#{$name}:hover {
                     color: $color;
                 }

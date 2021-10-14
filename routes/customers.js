@@ -3,7 +3,7 @@ const Customer = require('../models/Customer');
 
 router.get('/', async (req, res) => {
     try {
-        const customers = await Customer.find({}).select('_id name email account balance');
+        const customers = await Customer.find({}).select('_id name email account balance').sort({ name: 1 });
         const totalBalance = customers.reduce((sum, customer) => sum + customer.balance, 0);
 
         res.render('pages/customers', {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const customer = await Customer.findById(id).populate('transactions');
+        const customer = await Customer.findById(id).populate('transactions', '_id from to amount createdAt', null, { sort: { 'createdAt': -1 } });
         res.render('pages/customer-details', {
             title: `Xeon Bank | ${customer.name}`,
             files: 'customers',

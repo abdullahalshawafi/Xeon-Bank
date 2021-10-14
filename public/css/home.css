@@ -125,11 +125,11 @@
   transition: width 0.3s ease-in-out;
 }
 
-.services .service .service-details button a:hover {
+.services .service .service-details button a:hover, .services .service .service-details button a:focus {
   color: #f0f0f0;
 }
 
-.services .service .service-details button a:hover::before {
+.services .service .service-details button a:hover::before, .services .service .service-details button a:focus::before {
   width: 100%;
 }
 
@@ -208,7 +208,7 @@
   margin-left: 0.5rem;
 }
 
-.contact-us form button:hover {
+.contact-us form button:hover, .contact-us form button:focus {
   color: #0f0f0f;
   background-color: #f0f0f0;
 }

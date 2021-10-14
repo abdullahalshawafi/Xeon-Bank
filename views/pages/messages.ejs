@@ -1,0 +1,20 @@
+<%- include('../layouts/header') %>
+
+<div class="messages">
+    <h1>Messages</h1>
+    <% messages.forEach(message => { %>
+    <div class="message">
+        <button class="accordion <%= !message.isRead && 'unread' %>" id="<%= message._id %>"><span>Message from <%= message.senderName %></span><i
+                class="bi bi-chevron-down"></i></button>
+        <div class="panel">
+            <p>
+                <small><em><%= message.createdAt.toLocaleString() %></em></small><br>
+                Sender Email: <%= message.senderEmail %><br>
+                Message:<br><%= message.message %>
+            </p>
+        </div>
+    </div>
+    <% }); %>
+</div>
+
+<%- include('../layouts/footer') %>

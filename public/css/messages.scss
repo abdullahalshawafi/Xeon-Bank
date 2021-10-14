@@ -1,0 +1,71 @@
+@import "colors";
+
+.messages {
+    padding: 5rem 2rem;
+    color: $primary-font-color;
+
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+
+    .message {
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        button.accordion {
+            width: 100%;
+            padding: 0.8rem;
+            font-size: 1.25rem;
+            background-color: $primary-font-color;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            transition: background-color 0.2s ease-in-out;
+
+            .bi {
+                transform: rotate(0deg);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            &.unread {
+                font-weight: 800;
+            }
+
+            &.active .bi {
+                transform: rotate(180deg);
+            }
+
+            &.active,
+            &:hover,
+            &:focus {
+                background-color: $secondary-font-color;
+            }
+        }
+
+        .panel {
+            background-color: $primary-font-color;
+            color: $background-color;
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+
+            p {
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .messages {
+        padding: 5rem 7rem;
+    }
+}

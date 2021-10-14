@@ -61,16 +61,13 @@ header h1 {
 
 header nav {
   position: absolute;
-  z-index: -1;
-  top: -100%;
+  top: 100%;
   left: 0;
   width: 100%;
-  -webkit-transform: translateY(-200%);
-          transform: translateY(-200%);
-  -webkit-transition: -webkit-transform 0.6s ease-in-out;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
 header nav ul {
@@ -92,6 +89,9 @@ header nav ul {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out 0.1s;
+  transition: opacity 0.3s ease-in-out 0.1s;
 }
 
 header nav ul li a {
@@ -113,7 +113,8 @@ header nav ul li a::before {
   transition: all 0.3s ease-in-out;
 }
 
-header nav ul li a:hover::before {
+header nav ul li a:hover::before,
+header nav ul li a:focus::before {
   width: 100%;
 }
 
@@ -153,6 +154,7 @@ footer p {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    opacity: 1;
     width: 25rem;
   }
   header nav ul li a {

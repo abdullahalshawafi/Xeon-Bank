@@ -1,0 +1,81 @@
+.messages {
+  padding: 5rem 2rem;
+  color: #f0f0f0;
+}
+
+.messages h1 {
+  margin-bottom: 1.5rem;
+}
+
+.messages .message {
+  margin-bottom: 2rem;
+}
+
+.messages .message:last-child {
+  margin-bottom: 0;
+}
+
+.messages .message button.accordion {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.25rem;
+  background-color: #f0f0f0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.messages .message button.accordion .bi {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.messages .message button.accordion.unread {
+  font-weight: 800;
+}
+
+.messages .message button.accordion.active .bi {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.messages .message button.accordion.active, .messages .message button.accordion:hover, .messages .message button.accordion:focus {
+  background-color: #cecece;
+}
+
+.messages .message .panel {
+  background-color: #f0f0f0;
+  color: #0f0f0f;
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.messages .message .panel p {
+  margin: 1rem 0;
+}
+
+@media screen and (min-width: 650px) {
+  .messages {
+    padding: 5rem 7rem;
+  }
+}
+/*# sourceMappingURL=messages.css.map */

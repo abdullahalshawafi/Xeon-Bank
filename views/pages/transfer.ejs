@@ -6,23 +6,23 @@
         <div class="form-field">
             <label for="sender">Sender: </label>
             <select name="from" id="sender">
-                <% if (!Object.keys(sender).length) { %>
                 <option disabled selected>Select a sender</option>
                 <% customers.forEach(customer => { %>
                 <option value="<%= customer.account %>"><%= customer.email %></option>
                 <% }); %>
-                <% } else { %>
-                <option disabled selected value="<%= sender.account %>"><%= sender.email %></option>
-                <% } %>
             </select>
         </div>
         <div class="form-field">
             <label for="reciever">Reciever: </label>
             <select name="to" id="reciever">
+                <% if (!Object.keys(reciever).length) { %>
                 <option disabled selected>Select a reciever</option>
                 <% customers.forEach(customer => { %>
                 <option value="<%= customer.account %>"><%= customer.email %></option>
                 <% }); %>
+                <% } else { %>
+                <option selected value="<%= reciever.account %>"><%= reciever.email %></option>
+                <% } %>
             </select>
         </div>
         <div class="form-field">

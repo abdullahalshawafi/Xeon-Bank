@@ -8,7 +8,7 @@
     <p class="col-2 account-number"><b>Account No.</b>: <%= customer.account %></p>
     <p class="col-2 balance"><b>Balance</b>: <%= customer.balance %>$</p>
     <p class="col-2 nationality"><b>Nationality</b>: <%= customer.nationality %></p>
-    <a class="transfer-btn" href="/transactions/transfer?from=<%= customer.account %>">Transfer Money <i
+    <a class="transfer-btn" href="/transactions/transfer?to=<%= customer.account %>">Transfer Money <i
             class="bi bi-arrow-right-circle"></i></a>
 </div>
 

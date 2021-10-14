@@ -55,12 +55,12 @@ header {
 
     nav {
         position: absolute;
-        z-index: -1;
-        top: -100%;
+        top: 100%;
         left: 0;
         width: 100%;
-        transform: translateY(-200%);
-        transition: transform 0.6s ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
 
         ul {
             background-color: $background-color;
@@ -71,6 +71,8 @@ header {
             align-items: center;
             margin: 0;
             height: fit-content;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out 0.1s;
 
             li a {
                 margin-bottom: 1.25rem;
@@ -89,7 +91,8 @@ header {
                 }
             }
 
-            li a:hover::before {
+            li a:hover::before,
+            li a:focus::before {
                 width: 100%;
             }
         }
@@ -130,6 +133,7 @@ footer {
 
             ul {
                 flex-direction: row;
+                opacity: 1;
                 width: 25rem;
 
                 li a {

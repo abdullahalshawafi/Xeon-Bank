@@ -4,7 +4,7 @@ const Transaction = require('../models/Transaction');
 
 router.get('/', async (req, res) => {
     try {
-        const transactions = await Transaction.find({});
+        const transactions = await Transaction.find({}).sort({ createdAt: -1 });
 
         res.render('pages/transactions', {
             title: 'Xeon Bank | Transactions',
@@ -19,20 +19,20 @@ router.get('/', async (req, res) => {
 
 router.get('/transfer', async (req, res) => {
     try {
-        const sender = {};
-        const { from } = req.query;
-        const customers = await Customer.find({});
+        const reciever = {};
+        const { to } = req.query;
+        const customers = await Customer.find({}).sort({ name: 1 });
 
-        if (from) {
-            sender.account = from;
-            const { email } = await Customer.findOne({ account: from }).select('-_id email');
-            sender.email = email;
+        if (to) {
+            reciever.account = to;
+            const { email } = await Customer.findOne({ account: to }).select('-_id email');
+            reciever.email = email;
         }
 
         res.render('pages/transfer', {
             title: 'Xeon Bank | Transfer Money',
             files: 'transactions',
-            sender,
+            reciever,
             customers
         });
     } catch (err) {
@@ -82,6 +82,8 @@ router.post('/transfer', async (req, res) => {
             await sender.save();
             await reciever.save();
             await transaction.save();
+
+            return res.redirect(`./${transaction._id}`);
         }
 
         res.redirect('back');
