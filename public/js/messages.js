@@ -1,4 +1,8 @@
-document.querySelectorAll('button.accordion').forEach(button => {
+const buttons = document.querySelectorAll('button.accordion');
+
+buttons.forEach((button, index) => {
+    button.style.animation = `smoothAppear 0.3s forwards ${index * 200 + 100}ms`;
+
     button.addEventListener('click', async () => {
         button.classList.toggle('active');
         
@@ -20,6 +24,7 @@ document.querySelectorAll('button.accordion').forEach(button => {
             panel.style.maxHeight = `${panel.scrollHeight}px`;
         } else {
             panel.style.maxHeight = null;
+            button.blur();
         }
     });
 });

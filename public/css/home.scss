@@ -1,7 +1,8 @@
 @import "colors";
+$social-links: ("facebook": #1877f2, "linkedin": #0e76a8, "twitter": #00acee, "instagram": #cd486b);
 
 .landing-page {
-    background-color: $section-color;
+    background-color: $faded-primary-color;
     background-image: url("/images/background.jpg");
     background-size: cover;
     background-position: left center;
@@ -11,7 +12,7 @@
     height: 100vmin;
 
     h1 {
-        color: $primary-font-color;
+        color: $secondary-color;
         font-size: 9vw;
         margin-left: 0;
         text-align: center;
@@ -26,7 +27,7 @@
 }
 
 .services {
-    background-color: $primary-font-color;
+    background-color: $secondary-color;
     padding: 2rem;
     display: grid;
     row-gap: 2rem;
@@ -39,7 +40,7 @@
     h1 {
         grid-area: title;
         text-align: center;
-        font-size: 4rem;
+        font-size: 2.7rem;
     }
 
     .service {
@@ -80,10 +81,10 @@
 
                 a {
                     display: block;
-                    border: 2px solid $background-color;
+                    border: 2px solid $primary-color;
                     padding: 0.8rem 1rem;
-                    color: $background-color;
-                    background-color: $primary-font-color;
+                    color: $primary-color;
+                    background-color: $secondary-color;
                     position: relative;
                     z-index: 1;
                     transition: color 0.3s ease-in-out;
@@ -99,14 +100,14 @@
                         left: 0;
                         width: 0;
                         height: 100%;
-                        background-color: $background-color;
+                        background-color: $primary-color;
                         z-index: -1;
                         transition: width 0.3s ease-in-out;
                     }
 
                     &:hover,
                     &:focus {
-                        color: $primary-font-color;
+                        color: $secondary-color;
                     }
 
                     &:hover::before,
@@ -129,15 +130,15 @@
 }
 
 .contact-us {
-    background-color: $background-color;
-    padding: 4rem;
+    background-color: $primary-color;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
 
     h3 {
-        color: $primary-font-color;
+        color: $secondary-color;
         margin-bottom: 1rem;
         font-size: 2rem;
     }
@@ -150,7 +151,7 @@
         input,
         textarea,
         button {
-            background-color: $primary-font-color;
+            background-color: $secondary-color;
             border: none;
             border-radius: 0;
             padding: 0.8rem 1rem;
@@ -159,9 +160,9 @@
 
         button {
             cursor: pointer;
-            border: 2px solid $primary-font-color;
-            color: $primary-font-color;
-            background-color: $background-color;
+            border: 2px solid $secondary-color;
+            color: $secondary-color;
+            background-color: $primary-color;
             font-size: 1.1rem;
             transition: all 0.3s ease-in-out;
 
@@ -171,8 +172,8 @@
 
             &:hover,
             &:focus {
-                color: $background-color;
-                background-color: $primary-font-color;
+                color: $primary-color;
+                background-color: $secondary-color;
             }
         }
     }
@@ -218,6 +219,10 @@
     .services {
         padding: 5rem 7rem;
 
+        h1 {
+            font-size: 4rem;
+        }
+
         .service {
             flex-direction: row;
 
@@ -233,7 +238,6 @@
     }
 
     .contact-us {
-        padding: 5rem 7rem;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
@@ -253,6 +257,10 @@
         h1 {
             font-size: 6vw;
         }
+    }
+
+    .contact-us {
+        padding: 5rem 7rem;
     }
 }
 

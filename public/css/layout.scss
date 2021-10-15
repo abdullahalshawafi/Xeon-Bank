@@ -29,11 +29,11 @@
 a,
 a:hover {
     text-decoration: none;
-    color: $primary-font-color;
+    color: $secondary-color;
 }
 
 body {
-    background-color: $background-color;
+    background-color: $primary-color;
     min-height: 100vh;
 }
 
@@ -47,7 +47,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0.75rem 1rem;
-    background-color: $background-color;
+    background-color: $primary-color;
 
     h1 {
         margin-left: 2rem;
@@ -63,7 +63,7 @@ header {
         transition: max-height 0.3s ease-in-out;
 
         ul {
-            background-color: $background-color;
+            background-color: $primary-color;
             list-style: none;
             display: flex;
             flex-direction: column;
@@ -86,7 +86,7 @@ header {
                     top: -0.5rem;
                     left: 0;
                     width: 0;
-                    border-top: 3px solid $primary-font-color;
+                    border-top: 3px solid $secondary-color;
                     transition: all 0.3s ease-in-out;
                 }
             }
@@ -100,7 +100,7 @@ header {
 
     button {
         font-size: 2rem;
-        color: $primary-font-color;
+        color: $secondary-color;
         background: none;
         border: none;
         cursor: pointer;
@@ -108,19 +108,19 @@ header {
 }
 
 footer {
-    background-color: $background-color;
-    padding: 0 5rem 2rem 5rem;
+    background-color: $primary-color;
+    padding: 0 2rem 2rem 2rem;
 
     hr {
         border-width: 0;
         height: 1.5px;
-        width: 70%;
-        background-color: $primary-font-color;
+        width: 90%;
+        background-color: $secondary-color;
         margin: auto;
     }
 
     p {
-        color: $primary-font-color;
+        color: $secondary-color;
         text-align: center;
         margin-top: 2rem;
     }
@@ -144,6 +144,14 @@ footer {
 
         button {
             display: none;
+        }
+    }
+
+    footer {
+        padding: 0 5rem 2rem 5rem;
+
+        hr {
+            width: 70%;
         }
     }
 }

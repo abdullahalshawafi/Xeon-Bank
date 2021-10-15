@@ -1,7 +1,7 @@
 .customers,
 .transactions-history {
   background-color: #0f0f0f;
-  padding: 4rem;
+  padding: 5rem 2rem;
 }
 
 .customers h1,
@@ -27,15 +27,11 @@
   background-color: #f0f0f0;
 }
 
-.customers .responsive-table table tr,
-.transactions-history .responsive-table table tr {
-  opacity: 0;
-}
-
 .customers .responsive-table table th,
 .customers .responsive-table table td,
 .transactions-history .responsive-table table th,
 .transactions-history .responsive-table table td {
+  opacity: 0;
   padding: 0.8rem 1rem;
 }
 
@@ -60,7 +56,7 @@
 }
 
 .customer-details {
-  padding: 4rem;
+  padding: 5rem 2rem;
   padding-top: 7rem;
   background-color: #0f0f0f;
   color: #f0f0f0;
@@ -126,12 +122,15 @@
 }
 
 .transactions-history {
-  padding: 4rem;
+  padding: 5rem 2rem;
   padding-top: 0 !important;
   text-align: center;
 }
 
 @media screen and (min-width: 850px) {
+  .customers {
+    padding: 5rem 7rem;
+  }
   .customer-details {
     padding: 5rem 7rem;
     justify-items: left;
@@ -182,12 +181,6 @@
   .transactions-history {
     padding: 5rem 7rem;
     text-align: left;
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .customers {
-    padding: 5rem 7rem;
   }
 }
 /*# sourceMappingURL=customers.css.map */

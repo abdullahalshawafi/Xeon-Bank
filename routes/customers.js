@@ -22,6 +22,7 @@ router.get('/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const customer = await Customer.findById(id).populate('transactions', '_id from to amount createdAt', null, { sort: { 'createdAt': -1 } });
+        
         res.render('pages/customer-details', {
             title: `Xeon Bank | ${customer.name}`,
             files: 'customers',
@@ -38,6 +39,7 @@ router.post('/', async (req, res) => {
     try {
         const customer = await new Customer(req.body);
         await customer.save();
+        
         res.sendStatus(200);
     } catch (err) {
         res.send(err);

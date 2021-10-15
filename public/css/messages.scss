@@ -2,7 +2,7 @@
 
 .messages {
     padding: 5rem 2rem;
-    color: $primary-font-color;
+    color: $secondary-color;
 
     h1 {
         margin-bottom: 1.5rem;
@@ -19,7 +19,7 @@
             width: 100%;
             padding: 0.8rem;
             font-size: 1.25rem;
-            background-color: $primary-font-color;
+            background-color: $secondary-color;
             border: none;
             outline: none;
             cursor: pointer;
@@ -27,6 +27,8 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
+            opacity: 0;
+            transform: translateY(-20%);
             transition: background-color 0.2s ease-in-out;
 
             .bi {
@@ -45,13 +47,13 @@
             &.active,
             &:hover,
             &:focus {
-                background-color: $secondary-font-color;
+                background-color: $shaded-secondary-color;
             }
         }
 
         .panel {
-            background-color: $primary-font-color;
-            color: $background-color;
+            background-color: $secondary-color;
+            color: $primary-color;
             padding: 0 1rem;
             max-height: 0;
             overflow: hidden;
@@ -67,5 +69,21 @@
 @media screen and (min-width: 650px) {
     .messages {
         padding: 5rem 7rem;
+    }
+}
+
+@keyframes smoothAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    
+    70% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

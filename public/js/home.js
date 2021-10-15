@@ -17,8 +17,12 @@ contactForm.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(body)
         });
+        const status = res.status;
         res = await res.text();
         alert(res);
+        if (status === 200) {
+            e.target.reset();
+        }
     } catch (err) {
         console.log(err);
     }
